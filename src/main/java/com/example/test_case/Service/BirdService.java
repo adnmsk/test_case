@@ -1,22 +1,19 @@
 package com.example.test_case.Service;
 
 import com.example.test_case.Model.Bird;
-import com.example.test_case.Model.Pet;
 import com.example.test_case.Repository.BirdRepository;
-import com.example.test_case.Repository.PetRepository;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@ToString
+@RequiredArgsConstructor
 
 
 
@@ -24,20 +21,39 @@ import java.util.Optional;
     @Service
     public class BirdService {
 
-        private BirdRepository birdRep;
-        private Bird bird;
+    private BirdRepository birdRepository;
+    public BirdService(BirdRepository birdRepository) {
+        this.birdRepository = birdRepository;
+    }
 
-        public void save() {
-            birdRep.save(bird);
+
+
+
+    public Bird getBirdbyId(Long id){
+        Optional<Bird> bird = birdRepository.findById(id);
+        return new Bird ();
+    }
+
+    public List<Bird> allBirdsList (){
+        Iterable <Bird> iterable = birdRepository.findAll();
+        ArrayList<Bird> birds = new ArrayList<>();
+        for (Bird bird: iterable){
+            birds.add(new Bird ());
+
         }
+        return birds;
+    }
 
+    public void saveBird(Bird bird){
 
-        public void scan() {
+        birdRepository.save(bird);
 
-            Optional<Bird> birdOptional = birdRep.findById(1L);
-
-        }
 
 
     }
+
+}
+
+
+
 

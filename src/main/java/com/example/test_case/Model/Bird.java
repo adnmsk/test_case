@@ -1,9 +1,7 @@
 package com.example.test_case.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import io.lettuce.core.dynamic.annotation.CommandNaming;
+import jakarta.persistence.*;
 import lombok.*;
 
 @NoArgsConstructor
@@ -13,10 +11,11 @@ import lombok.*;
 @ToString
 
 @Entity
+@Table(name="birds")
 public class Bird extends Animal {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id",nullable = false)
     private long id;
 

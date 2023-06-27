@@ -1,24 +1,20 @@
 package com.example.test_case.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 
 @Entity
+@Table(name="dogs")
 public class Pet extends Animal {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id",nullable = false)
     private long id;
 
@@ -26,7 +22,7 @@ public class Pet extends Animal {
      private String color;
 
 
-    private void walk(){
+    public void walk(){
         System.out.println("The pet "+ super.getName()+" "+ super.getFamily() +"walks on the street");
     }
 
