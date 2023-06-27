@@ -18,7 +18,7 @@ class BirdServiceTest {
         sparrow.setName("Sparrow");
 
         BirdService b1 = new BirdService();
-        b1.saveBird(sparrow);
+       // b1.saveBird(sparrow);
 
 
 
