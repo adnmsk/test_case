@@ -2,7 +2,6 @@ package com.example.testcase.service;
 
 import com.example.testcase.model.Bird;
 import com.example.testcase.repository.BirdRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +10,7 @@ import java.util.Optional;
 
 
 @Service
+
 public class BirdService {
     private final BirdRepository birdRepository;
 
@@ -23,14 +23,9 @@ public class BirdService {
         return new Bird();
     }
 
-    public List<Bird> allBirdsList() {
-        Iterable<Bird> iterable = birdRepository.findAll();
-        ArrayList<Bird> birds = new ArrayList<>();
-        for (Bird bird : iterable) {
-            birds.add(new Bird());
-
-        }
-        return birds;
+    public Iterable<Bird> allBirdsList() {
+        Iterable<Bird> birds =  birdRepository.findAll();
+        return  birds;
     }
 
     public void saveBird(Bird bird) {
