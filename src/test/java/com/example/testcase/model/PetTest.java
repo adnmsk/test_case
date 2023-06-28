@@ -8,20 +8,21 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class PetTest {
     @Test
     void getId() {
-        Pet dog = new Pet(1L, "grey");
+        Pet dog = new Pet();
         System.out.println(dog);
         dog.setFamily("lobos");
         dog.setName("Sheep-dog");
         System.out.println("the id is " + dog.getId());
         dog.walk();
-        assertThat(dog.getId()).isEqualTo(1L);
+        assertThat(dog.getId()).isEqualTo(0L);
     }
 
     @Test
     void getColor() {
-        Pet dog = new Pet(1L, "grey");
+        Pet dog = new Pet();
         System.out.println(dog);
         dog.setFamily("lobos");
+        dog.setColor("grey");
         dog.setName("Sheep-dog");
         System.out.println("the id is " + dog.getId());
         dog.walk();
@@ -32,12 +33,12 @@ class PetTest {
     void setColor() {
         Pet dog = new Pet();
         System.out.println(dog);
-        dog.setId(3L);
+
         dog.setFamily("lobos");
         dog.setName("Sheep-dog");
         System.out.println("the id is " + dog.getId());
         dog.walk();
-        assertThat(dog.getId()).isEqualTo(3L);
+        assertThat(dog.getId()).isEqualTo(0L);
         assertDoesNotThrow(() -> dog.setColor("semi-grey"));
     }
 }
