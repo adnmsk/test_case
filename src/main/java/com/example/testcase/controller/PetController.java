@@ -23,7 +23,7 @@ public class PetController {
 
         @GetMapping("/find-all")
         public ResponseEntity<List<Pet>> findAll (){
-            return ResponseEntity.ok(petService.findAll());
+            return ResponseEntity.ok(petService.getPetRep().findAll());
 
         }
         @GetMapping("/{id}")

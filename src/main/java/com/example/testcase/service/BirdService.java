@@ -21,7 +21,7 @@ public class BirdService extends AbstractObjectService<Bird> {
 
 
 
-    public Bird saveBird(Bird bird) {
+    public Bird save(Bird bird) {
         return birdRepository.save(bird);
     }
 
