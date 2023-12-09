@@ -18,7 +18,7 @@ public class BirdController {
 
     @PostMapping("/create")
     public ResponseEntity<Bird> create (@RequestBody Bird bird){
-        Bird b=birdService.saveBird(bird);
+        Bird b=birdService.save(bird);
         return ResponseEntity.ok(bird);
     }
 

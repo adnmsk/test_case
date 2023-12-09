@@ -3,7 +3,7 @@ package com.example.testcase.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

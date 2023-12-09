@@ -11,7 +11,6 @@ import lombok.Setter;
 @MappedSuperclass
 public abstract class Animal {
     @Id
-    @SequenceGenerator(name = "1",allocationSize = 100, initialValue = 200)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int number;

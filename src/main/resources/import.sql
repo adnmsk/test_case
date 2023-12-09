@@ -1,2 +1,2 @@
-INSERT INTO public.bird (number, id, color, family, name) VALUES (1, 2, 'red', 'woodpecker', 'Woody');
-INSERT INTO public.bird (number, id, color, family, name) VALUES (0, 1, 'black', 'ravens', 'Sparrow');
+INSERT INTO public.bird (number, id, color, family, name) VALUES (1, 12, 'red', 'woodpecker', 'Woody');
+INSERT INTO public.bird (number, id, color, family, name) VALUES (0, 10, 'black', 'ravens', 'Sparrow');

@@ -1,9 +1,11 @@
 package com.example.testcase.model.user;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -14,6 +16,7 @@ import java.util.List;
 @Entity
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Person")
 public class Person {
     @Id
@@ -21,14 +24,14 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotEmpty(message = "Логин не может быть пустым")
-    @Size(min = 5, max = 50, message = "Логин должен быть от 5 до 50 символов")
+    @NotEmpty(message = "Login cannot be empty")
+    @Size(min = 5, max = 50, message = "Login must contain from 5 to 50 characters")
     @Column(name = "login")
     private String login;
 
-    @NotEmpty(message = "Пароль не может быть пустым")
+    @NotEmpty(message = "Password cannot be empty")
     @Column(name = "password")
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$", message = "Пароль должен содержать не менее 6 символов, хотя бы одну цифру, спец символ, букву в верхнем и нижнем регистре ")
+    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\\s).*$", message = "Password must me longer than 6 characters and contain at least 1 number, one symbol, letters in lower and upper case ")
     private String password;
 
     @Column(name = "role")
