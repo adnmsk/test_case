@@ -13,9 +13,6 @@ import lombok.*;
 @Entity
 public class Bird extends Animal {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
 
     private String color;
 
