@@ -10,6 +10,9 @@
         <module name="test_case" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="test_case" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
